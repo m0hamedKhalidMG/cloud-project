@@ -19,11 +19,6 @@
 │   └── finetune.ipynb           # Fine-tuning notebook (Section 5)
 ├── scripts/
 │   └── setup_ec2.sh             # EC2 setup: Ollama + OpenWebUI (Sections 6 & 7)
-├── report/
-│   ├── section1_architecture.md
-│   ├── section2_networking.md
-│   ├── section3_model_dataset.md
-│   └── sections567_finetuning_deploy_ui.md
 └── README.md
 ```
 
@@ -65,7 +60,7 @@ curl ifconfig.me   # copy this for the my_ip_cidr variable
 cd terraform
 terraform init
 terraform apply \
-    -var="20596365" \
+    -var="student_id=20596365" \
     -var="my_ip_cidr=$(curl -s ifconfig.me)/32"
 # Note the ec2_public_ip and openwebui_url outputs
 
@@ -158,7 +153,9 @@ Terminate all resources after grading to avoid ongoing charges.*
 
 ```bash
 # Terminate EC2 and VPC resources
-cd terraform && terraform destroy -var="20596365" -var="my_ip_cidr=0.0.0.0/0"
+cd terraform && terraform destroy \
+    -var="student_id=20596365" \
+    -var="my_ip_cidr=0.0.0.0/0"
 
 # Delete S3 buckets
 aws s3 rb s3://20596365-s3-dataset --force
