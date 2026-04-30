@@ -1,8 +1,8 @@
 # CISC 886 – Cloud Computing Project
 ## End-to-End Cloud Chat Assistant on AWS
 
-**Queen's netID:** `25kp55`   
-**Region:** `us-east-1`  
+**Queen's netIDs:** `25kp55-25hfnv-25vft4`
+**Region:** `us-east-1`
 **Model:** Llama 3.2 3B Instruct (fine-tuned with QLoRA on Alpaca)
 
 ---
